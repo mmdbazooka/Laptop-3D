@@ -1,0 +1,665 @@
+body {
+    background-color: #666;
+    perspective: 500px;
+    transition: .1s;
+}
+::selection {background: transparent;}
+.help {
+    background-color: #fff;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 50px;
+    width: 160px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: monospace;
+}
+#laptop {
+    width: 500px;
+    height: 350px;
+    margin: 200px auto;
+    transform: rotateX(30deg) scale(70%);
+    transform-style: preserve-3d;
+    position: relative;
+}
+#laptop > div {
+    width: 500px;
+    height: 350px;
+    position: absolute;
+}
+#laptop > #topOfLaptop {
+    height: 350px;
+    background-color: #848484;
+    transform: translateZ(25px);
+    transition: .5s;
+    transform-origin: top;
+    transform-style: preserve-3d;
+}
+#laptop > #topOfLaptop.open {transform: rotateX(80deg) scaleY(70%) translateZ(5px) translateY(25px);}
+#laptop > #topOfLaptop > #back {
+    width: 500px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: rotate(180deg);
+}
+#laptop > #topOfLaptop > #monitor {
+    width: 500px;
+    height: 350px;
+    background-color: #000;
+    border: 10px solid rgb(77, 77, 77);
+    box-sizing: border-box;
+    position: absolute;
+    transform: translateZ(-6px);
+}
+#laptop > #topOfLaptop > #monitor > #windows.windows-on {opacity: 1;}
+#laptop > #topOfLaptop > #rightOfLaptop {
+    width: 500px;
+    height: 5px;
+    transform: translateY(-3px) translateZ(-3px) rotateX(90deg);
+    background-color: #333;
+}
+#laptop > #topOfLaptop > #leftOfLaptop {
+    width: 500px;
+    height: 5px;
+    transform: translateY(343px) translateZ(-3px) rotateX(90deg);
+    background-color: #333;
+}
+#laptop > #topOfLaptop > #backOfLaptop {
+    width: 350px;
+    height: 5px;
+    transform: translateY(158px) translateZ(-3px) translateX(-175px) rotateX(90deg) rotateY(90deg);
+    background-color: #333;
+}
+#laptop > #topOfLaptop > #frontOfLaptop {
+    width:  350px;
+    height: 5px;
+    transform: translateY(162px) translateZ(-3px) translateX(325px) rotateX(90deg) rotateY(90deg);
+    background-color: #333;
+}
+/* Keyboard */
+#laptop > #bottomOfLaptop {
+    transform: translateZ(19px);
+    background-color: #555555;
+    display: flex;
+    flex-direction: column;
+}
+#laptop > #bottomOfLaptop > div > div {
+    cursor: pointer;
+    font-family: cursive;
+}
+#laptop > #bottomOfLaptop > div > div.on {animation: light 10s infinite linear;}
+@keyframes light {
+    0% {box-shadow: 0 0 5px #ff0000;}
+    10% {box-shadow: 0 0 5px #ff9100;}
+    20% {box-shadow: 0 0 5px #fff700;}
+    30% {box-shadow: 0 0 5px #a2ff00;}
+    40% {box-shadow: 0 0 5px #00ff37;}
+    50% {box-shadow: 0 0 5px #00ff84;}
+    60% {box-shadow: 0 0 5px #00fffb;}
+    70% {box-shadow: 0 0 5px #00aaff;}
+    80% {box-shadow: 0 0 5px #0037ff;}
+    90% {box-shadow: 0 0 5px #2200ff;}
+    100% {box-shadow: 0 0 5px #fb00ff;}
+}
+#laptop > #bottomOfLaptop > div > div:hover {box-shadow: 0 0 10px #0dffff inset;}
+#laptop > #bottomOfLaptop > div > div:active {box-shadow: 0 0 15px #0dd7ff inset;}
+#laptop > #bottomOfLaptop > #f {
+    display: flex;
+    justify-content: space-around;
+}
+#laptop > #bottomOfLaptop > #f > div {
+    padding: 3px 5px;
+    background-color: #0f0f0f;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 15px;
+}
+#laptop > #bottomOfLaptop > #f > div:last-child{
+    padding: 2px;
+    border-radius: 50px;
+}
+#laptop > #bottomOfLaptop > #r1 {
+    display: flex;
+    justify-content: space-around;
+}
+#laptop > #bottomOfLaptop > #r1 > div {
+    padding: 0px 10px;
+    background-color: #0f0f0f;
+    color: #fff;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+#laptop > #bottomOfLaptop > #r2 {
+    display: flex;
+    justify-content: space-around;
+}
+#laptop > #bottomOfLaptop > #r2 > div {
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+    background-color: #0f0f0f;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+#laptop > #bottomOfLaptop > #r2 > div:first-child {width: 60px;}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#laptop > #bottomOfLaptop > #r2 > div > img {margin-left: 5px;}
+#laptop > #bottomOfLaptop > #r3 {
+    display: flex;
+    justify-content: space-around;
+}
+#laptop > #bottomOfLaptop > #r3 > div {
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+    background-color: #0f0f0f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+#laptop > #bottomOfLaptop > #r3 > div:last-child {width: 70px;}
+#laptop > #bottomOfLaptop > #r3 > div:first-child {width: 70px;white-space: nowrap;}
+#laptop > #bottomOfLaptop > #r4 {
+    display: flex;
+    justify-content: space-around;
+}
+#laptop > #bottomOfLaptop > #r4 > div {
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+    background-color: #0f0f0f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+#laptop > #bottomOfLaptop > #r4 > div:last-child {width: 80px;align-items: flex-start;}
+#laptop > #bottomOfLaptop > #r4 > div:first-child {width: 80px;align-items: flex-start;}
+#laptop > #bottomOfLaptop > #r5 {
+    display: flex;
+    justify-content: flex-start;
+}
+#laptop > #bottomOfLaptop > #r5 > div {
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+    background-color: #0f0f0f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 6px 0 0;
+    border-radius: 5px;
+}
+#laptop > #bottomOfLaptop > #r5 > div:first-child {width: 40px;}
+#laptop > #bottomOfLaptop > #r5 > div:last-child {width: 40px;}
+#laptop > #bottomOfLaptop > #r5 > div:nth-child(4) {width: 180px;} 
+#laptop > #rightOfLaptop {
+    width: 500px;
+    height: 14px;
+    transform: translateY(-7px) translateZ(12px) rotateX(90deg);
+    background-color: #000;
+}
+#laptop > #leftOfLaptop {
+    width: 500px;
+    height: 14px;
+    transform: translateY(343px) translateZ(12px) rotateX(90deg);
+    background-color: #000;
+}
+#laptop > #frontOfLaptop {
+    width: 350px;
+    height: 15px;
+    transform: translateY(167.5px) translateZ(12px) translateX(325px) rotateX(90deg) rotateY(90deg);
+    background-color: #000;
+}
+#laptop > #backOfLaptop {
+    width: 350px;
+    height: 15px;
+    transform: translateY(167.5px) translateZ(12px) translateX(-173px) rotateX(90deg) rotateY(90deg);
+    background-color: #000;
+}
+#laptop > #underOfLaptop {
+    width: 500px;
+    height: 350px;
+    transform: translateZ(5px);
+    background-color: #000;
+}
+/* Windows */ 
+#laptop > #topOfLaptop > #monitor > #windows {
+    background-image: url(images/windows-bg.jpg);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: .5s;
+    position: relative;
+    transform: rotate(180deg) scaleX(-1);
+    overflow: hidden ;
+}
+#laptop > #topOfLaptop > #monitor > #windows > #thisPc {
+    padding: 5px;
+    position: absolute;
+    left: 2%;
+    top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: cursive;
+    font-size: 14px;
+    border: 2px solid transparent;
+    cursor: default;
+}
+#laptop > #topOfLaptop > #monitor > #windows > #thisPc:hover {
+    border: 2px solid #74b4cbe9;
+    background-color: #9bc6d5c1;
+}
+#laptop > #topOfLaptop > #monitor > #windows > #thisPc:active {background-color: #85c0d6c1;}
+#laptop > #topOfLaptop > #monitor > #windows > #thisPc > img {
+    width: 35px;
+    height: 35px;
+}
+#laptop > #topOfLaptop > #monitor > #windows > #taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 35px;
+    width: 100%;
+    background-color: #60606090;
+    display: flex;
+    align-items: center;
+}
+#laptop > #topOfLaptop > #monitor > #windows > #taskbar > div {
+    height: 100%;
+    width: 25px;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#laptop > #topOfLaptop > #monitor > #windows > #taskbar > div:hover {background-color: #60606090;}
+#laptop > #topOfLaptop > #monitor > #windows > #taskbar > input {
+    height: 100%;
+    margin: 0 5px;
+}
+/* start menu  */
+.start-menu-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom: 45px;
+    left: -36px;
+    background-color: #363636d6;
+    width: 30px;
+    transition: .3s;
+    z-index: -10;
+    transform: scaleY(60%);
+}
+.start-menu-left > li {
+    width: 100%;
+    overflow: hidden;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+    font-family: sans-serif;
+    cursor: default;
+}
+.start-menu-left:hover {width: 240px;}
+.start-menu-left > li:first-child {
+    margin-bottom: 100px;
+    font-weight: 600;
+}
+.start-menu-left > li > img {margin-right: 20px;}
+.start-menu-left > li:nth-child(5) > span {margin-left: -4px;}
+.start-menu-left > li:nth-child(6) > span {margin-left: -2px;}
+.start-menu-left > li:hover {background-color: #d5d5d554;}
+.start-menu-left > .power {
+    position: relative;
+}
+.start-menu-left > .power > .power-menu {
+    visibility: hidden;
+    position: fixed;
+    left: 0;
+    bottom: 0px;
+    width: 240px;
+    margin-left: 40px;
+    transition: .05s;
+    background-color: red;
+}
+.start-menu-left > .power > .power-menu > div {
+    background-color: #282828;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+}
+.start-menu-left > .power > .power-menu > div:hover {background-color: #929292;}
+.start-menu-left > .power > .power-menu > div > img {margin-right: 5px;}
+.shut-down {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    font-family: cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.shut-down > .starting-window {visibility: hidden;}
+.shut-down > .shuting-down-window , .shut-down > .starting-window {
+    position: absolute;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 25px;
+    width: 100%;
+    height: 100%;
+    background-color: #232323;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.shut-down > .shuting-down-window > div:nth-child(2) , .shut-down > .starting-window > div:nth-child(2) {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    border-bottom-width: 30px;
+    margin-bottom: 40px;
+    animation: rotate 50s infinite linear ;
+}
+@keyframes rotate {
+    0% {transform: rotate(6000deg);}
+}
+.this-pc-files {
+    background-color: #fff;
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    top: -37%;
+    left: -28%;
+    transform: scaleY(38%) scaleX(45%);
+    visibility: hidden;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 0 2px 1px gray;
+}
+.file-100-percent {
+    background-color: #fff;
+    width: 100%;
+    height: calc(100% - 45px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+}
+.file-0-percent {display: none;}
+.this-pc-header {
+    width: 95%;
+    height: 30px;
+    background-color: #fff;
+    display:flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    list-style: none;
+    justify-content: flex-start;
+    font-family: tahoma;
+    position: relative;
+    top: -2%;
+    overflow: hidden;
+}
+.this-pc-header > li {
+    padding: 5.5px;
+    cursor: pointer;
+}
+.this-pc-header > li > img {
+    width: 15px;
+    height: 15px;
+    margin: 0 15px;
+}
+.this-pc-header > li:hover:first-child {background-color: #d61212;}
+.this-pc-header > li:hover:nth-child(2) , .this-pc-header > li:hover:nth-child(3){background-color: #9f9f9f;}
+.this-pc-header > li:nth-child(4) {font-size: 15px;}
+.this-pc-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    cursor: default;
+    border-bottom: .5px solid #8080807f;
+}
+.this-pc-top > li {
+    font-family: cochin;
+    padding: 3px 10px;
+    border: .5px solid transparent;
+}
+.this-pc-top > li:first-child {
+    background: #0095c2;
+    color: #fff;
+}
+.this-pc-top > li:nth-child(2):hover {
+    background-color: #51515139;
+    border: .5px solid gray;
+}
+.this-pc-top > li:nth-child(3):hover {
+    background-color: #51515139;
+    border: .5px solid gray;
+}
+.this-pc-top > li:nth-child(4):hover {
+    background-color: #51515139;
+    border: .5px solid gray;
+}
+.this-pc-head {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 5px;
+}
+.this-pc-head > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px;
+    border: 2px solid transparent;
+    cursor: default;
+}
+.this-pc-head > li:hover {
+    border: 2px solid #74b4cbe9;
+    background-color: #7ec5de63;
+}
+.this-pc-head > li:nth-child(4) {
+    width: 50px;
+    margin-left: 10px;
+    padding: 0px 20px;
+    border-left: .5px solid #8080807f;
+}
+.this-pc-head > li:nth-child(5) {
+    width: 100px;
+    text-align: center;
+}
+.this-pc-head > li:nth-child(6) {
+    width: 110px;
+    text-align: center;
+}
+.this-pc-head > li:nth-child(8) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 12px;
+}.this-pc-head > li:nth-child(8):hover {border:2px solid transparent;background:none;}
+.p-right {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: flex-start;
+    cursor: default;
+    margin-left: 4%;
+}
+.this-pc-head > li:nth-child(9) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}.this-pc-head > li:nth-child(9):hover {border:2px solid transparent;background:none;}
+.this-pc-head > li:nth-child(10) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}.this-pc-head > li:nth-child(10):hover {border:2px solid transparent;background:none;}
+.top-panel {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.top-panel > img:nth-child(4) {border: 1px solid transparent;}
+.top-panel > img:nth-child(4):hover {
+    background-color: #74b4cb79;
+    border: 1px solid #7ec5de63;
+}
+.top-panel > img:nth-child(5) {width: 60%;}
+.top-panel > img:nth-child(6) {border: 1px solid transparent;}
+.top-panel > img:nth-child(6):hover {border: 1px solid #74b4cbe9;}
+.top-panel > img:nth-child(7) {border: 1px solid transparent;margin-left: -1px;}
+.top-panel > img:nth-child(7):hover {border: 1px solid #74b4cbe9;}
+.top-panel-input {
+    overflow: hidden;
+    width: 22%;
+    height: 30px;
+    outline: none;
+    border: .5px solid #74b4cb79;
+}
+.this-pc-files > .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.this-pc-files > .container > .left-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.this-pc-files > .container > .left-menu > ul > li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+}
+.this-pc-files > .container > .left-menu > ul > li:hover {background-color: #b5d5ff;}
+.this-pc-files > .container > .left-menu > ul > li > img {margin-right: 5px;}
+.carrent {background-color: #41a7c6;}
+.this-pc-files > .container > .right-menu {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+.folders {margin-bottom: 250px;}
+.disks {padding: 10px 0;}
+.folders , .disks {
+    z-index: 999;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    color: #1a609d;
+    cursor: default;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.folders > .hr , .disks > .hr {
+    width: 100%;
+    height: 2px;
+    margin-left: 5px;
+    background-color: #d7d7d799;
+}
+.folders > ul {
+    visibility: hidden;
+    position: absolute;
+    top: -250px;
+    display: flex;
+    flex-flow: row wrap;
+    transition: .5s;
+    z-index: -1;
+}
+.folders > ul.active {
+    visibility: visible;
+    position: absolute;
+    top: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    transition: .5s;
+    z-index: -1;
+}
+.disks > ul {
+    visibility: hidden;
+    position: absolute;
+    top: 265px;
+    display: flex;
+    flex-flow: row wrap;
+    transition: .5s;
+    z-index: -1;
+}
+.disks > ul.active {
+    visibility: visible;
+    position: absolute;
+    top: 320px;
+    display: flex;
+    flex-flow: row wrap;
+    transition: .5s;
+    z-index: -1;
+}
+.folders > ul > li , .disks > ul > li{
+    display: flex;
+    width: 48%;
+    color: #000;
+    font-size: 13px;
+    margin: 5px 5px;
+    padding: 5px 0 5px 20px;
+}
+.folders > ul > li:hover , .disks > ul > li:hover {background-color: #f5f5f5;}
+.folders > ul > li > img {
+    margin-right: 5px;
+    width: 40px;
+}
+.disks > ul > li > img {width: 250px;}
+.this-pc-header > li {
+    padding: 10px 5.5px;
+    cursor: pointer;
+}

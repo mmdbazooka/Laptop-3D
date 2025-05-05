@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body id="body">
+    <div class="help">Hold s to stop rotate</div>
+    <div class="help">Click o to open laptop</div>
+    <div id="laptop">
+        <div id="topOfLaptop">
+            <div id="monitor">
+                <div id="windows">
+                    <div id="thisPc">
+                        <img src="images/this-pc_11zon.png" >
+                        This PC
+                    </div>
+                    <main class="this-pc-files">
+                        <ul class="this-pc-header" draggable="true">
+                                <li class="close" ><img src="images/close.png" ></li> 
+                                <li class="maximize"><img src="images/maximize.png"  ></li> 
+                                <li class="minimize"><img src="images/minimize.png" ></li>
+                        <span style="display: flex;flex-direction: row-reverse; align-items: center; position: absolute;left: 5px;top: 2px;">
+                            <li style="margin-left: 5px;"> This PC </li> 
+                            <li style="border-left: .5px solid gray;height: 15px;"></li>
+                            <img src="images/quick-access-toolbar.png" style="margin-right: 5px;">
+                            <img src="images/quick_access_toolbar_file_explorer.png"  >
+                            <li style="border-left: .5px solid gray;height: 15px;"></li>
+                            <img src="images/this-pc_11zon.png" width="20" height="20" style="margin-right: 5px;">
+                        </span>
+                        </ul>
+                          <ul class="this-pc-top">
+                            <li>File</li>
+                            <li>Computer</li>
+                            <li>View</li>
+                          </ul>
+                          <ul class="this-pc-head">
+                                <li><img src="images/properties.png" >Properties</li>
+                                <li><img src="images/file-explorer.png" width="45" height="40" style="margin-bottom: 5px;" >Open</li>
+                                <li><img src="images/Rename.png" height="40" width="45" style="margin-bottom: 5px;" >Rename</li>
+                                <li><img src="images/access-media.png" height="40" width="45" style="margin-bottom: 5px;" >Access Media<i class="fa fa-angle-down"></i></li>
+                                <li><img src="images/map-network-drive.png" height="40" width="45" style="margin-bottom: 5px;" >Map network drive<i class="fa fa-angle-down"></i></li>
+                                <li><img src="images/add-network-location.png" height="40" width="45" style="margin-bottom: 5px;" >Add a network location</li>
+                                <li><img src="images/open-settings.png" height="30" width="30" style="margin-bottom: 15px;" >Open settings</li>
+                                <div class="p-right">
+                                <li><img src="images/unistall-change.png" height="20" width="20"  >Unistall or change a program</li>
+                                <li><img src="images/system-properties.png" height="20" width="20"  >System properties</li>
+                                <li><img src="images/manage.png" height="20" width="20"  >Manage</li>    
+                            </div>
+                            </ul>
+                            <div class="top-panel">
+                                <img src="images/top-panel-left.png"  width="40" height="40">
+                                <img src="images/top-panel-right.png" width="40" height="40">
+                                <img src="images/top-panel-bottom.png"width="40" height="40">
+                                <img src="images/top-panel-top.png"   width="30" height="40">
+                                <img src="images/top-panel-center.png" height="30">
+                                <img src="images/top-panel-center-bottom.png" >
+                                <img src="images/top-panel-center-refresh.png" >
+                                <input type="text" class="top-panel-input" placeholder="Search items">
+                            </div>
+                            <div class="container">
+                                <div class="left-menu">
+                                    <ul>
+                                        <li style="margin-left: -10px;"><i class="fa fa-angle-down"></i><img src="images/quick-access.png" width="20" >Quick access</li>
+                                        <li><img src="images/desktop.png" width="20" >Desktop</li>
+                                        <li><img src="images/downloads.png" width="20" >Downloads</li>
+                                        <li><img src="images/documents-file.jpg" width="20" >Documents</li>
+                                        <li><img src="images/pictures-file.jpg" width="20" >Pictures</li>
+                                        <li class="carrent"><img src="images/thispc-files.jpg" width="20" >This PC</li>
+                                        <li><img src="images/network.jpg" width="23" >Network</li>
+                                    </ul>
+                                </div>
+                                <div class="right-menu">
+                                    <div class="folders">
+                                        <img src="images/down-angle.png" width="30">
+                                        <div>Folders (7)</div>
+                                        <div class="hr"></div>
+                                        <ul>
+                                            <li><img src="images/3d-object.png" >3D Objects</li>
+                                            <li><img src="images/desktop-folder.png" >Desktop</li>
+                                            <li><img src="images/documents-folder.png" >Documents</li>
+                                            <li><img src="images/download-folder.png" >Downloads</li>
+                                            <li><img src="images/music-folder.png" >Music</li>
+                                            <li><img src="images/picture-folder.png" >Pictures</li>
+                                            <li><img src="images/video-folder.png" >Videos</li>
+                                        </ul>
+                                    </div>
+                                    <div class="disks">
+                                        <img src="images/down-angle.png" width="30">
+                                        <div>Devices and drives (2)</div>
+                                        <div class="hr"></div>
+                                        <ul>
+                                            <li><img src="images/local-disk.png" ></li>
+                                            <li><img src="images/disk-2.png" ></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                    </main>
+                    <div id="taskbar">
+                        <div id="windowsLogo"><img src="images/win-logo.png" width="30" ></div>
+                        <input type="search" placeholder="Type here to search" id="winSearch">
+                    </div>
+                    <ul class="start-menu-left" style="bottom: -550px;">
+                        <li><img src="images/menu.png" width="28">START</li>
+                        <li><img src="images/user.png" width="22">Bazooka</li>
+                        <li><img src="images/pictures.png" width="22" height="30">Picture</li>
+                        <li><img src="images/documents.png" width="20" >Documents</li>
+                        <li><img src="images/settings.png" width="24"><span>Settings</span></li>
+                        <li class="power"><img src="images/Shutdown-wallpaper1.png" width="20">Power 
+                            <div class="power-menu" style="visibility: hidden;bottom: 50px;">
+                                <div class="sleep"><img src="images/sleep.png" width="20">Sleep</div>
+                                <div class="shut-down-btn"><img src="images/Shutdown-wallpaper1.png" width="20"><span>Shut down</span></div>
+                                <div class="restart"><img src="images/restart.png" width="22">Restart</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="shut-down" style="visibility: hidden;">
+                        click page to start window
+                        <div class="shuting-down-window">
+                            <img src="images/windows-logo.jpg" width="250">
+                            <div></div>
+                            Shutting down
+                        </div>
+                        <div class="starting-window">
+                            <img src="images/windows-logo.jpg" width="250">
+                            <div></div>
+                            Starting window
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="back">
+                <img src="images/asus-logo.png" >
+            </div>
+            <div id="rightOfLaptop"></div>
+            <div id="leftOfLaptop"></div>
+            <div id="frontOfLaptop"></div>
+            <div id="backOfLaptop"></div>
+        </div>
+        <div id="underOfLaptop"></div>
+        <div id="bottomOfLaptop">
+            <div id="f">
+                <div>Esc</div>
+                <div>F1</div>
+                <div>F2</div>
+                <div>F3</div>
+                <div>F4</div>
+                <div>F5</div>
+                <div>F6</div>
+                <div>F7</div>
+                <div>F8</div>
+                <div>F9</div>
+                <div>F10</div>
+                <div>F11</div>
+                <div>F12</div>
+                <div id="turnOnOff"><img src="images/off-on.png" width="25"></div>
+            </div>
+            <div id="r1">
+                <div>× <div>~</div></div>
+                <div>1 <div>!</div></div>
+                <div>2 <div>@</div></div>
+                <div>3 <div>#</div></div>
+                <div>4 <div>$</div></div>
+                <div>5 <div>%</div></div>
+                <div>6 <div>^</div></div>
+                <div>7 <div>&</div></div>
+                <div>8 <div>*</div></div>
+                <div>9 <div>(</div></div>
+                <div>0 <div>)</div></div>
+                <div>- <div>_</div></div>
+                <div>= <div>+</div></div>
+            </div>
+            <div id="r2">
+                <div class="center">Tab <img src="images/tab-key.png" width="20" ></div>
+                <div>Q</div>
+                <div>W</div>
+                <div>E</div>
+                <div>R</div>
+                <div>T</div>
+                <div>Y</div>
+                <div>U</div>
+                <div>I</div>
+                <div>O</div>
+                <div>P</div>
+                <div>{</div>
+                <div>}</div>
+                <div>|</div>
+            </div>
+            <div id="r3">
+                <div class="center">Caps Lock</div>
+                <div>A</div>
+                <div>S</div>
+                <div>D</div>
+                <div>F</div>
+                <div>G</div>
+                <div>H</div>
+                <div>J</div>
+                <div>K</div>
+                <div>L</div>
+                <div class="center">Enter</div>
+            </div>
+            <div id="r4">
+                <div class="center">Shift</div>
+                <div>Z</div>
+                <div>X</div>
+                <div>C</div>
+                <div>V</div>
+                <div>B</div>
+                <div>N</div>
+                <div>M</div>
+                <div>.</div>
+                <div>?</div>
+                <div><img src="images/top-panel-top.png"></div>
+                <div class="center">Shift</div>
+            </div>
+            <div id="r5">
+                <div class="center">Ctrl</div>
+                <div><img src="images/win-logo.png" width="15"></div>
+                <div>Alt</div>
+                <div></div>
+                <div>Alt</div>
+                <div><img src="images/top-panel-top.png" style="rotate: -90deg;"></div>
+                <div><img src="images/top-panel-top.png" style="rotate: 180deg;background-blend-mode: overlay;"></div>
+                <div><img src="images/top-panel-top.png" style="rotate: 90deg;"></div>
+                <div class="center">Ctrl</div>
+            </div>
+        </div>
+        <div id="rightOfLaptop"></div>
+        <div id="leftOfLaptop"></div>
+        <div id="frontOfLaptop"></div>
+        <div id="backOfLaptop"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
